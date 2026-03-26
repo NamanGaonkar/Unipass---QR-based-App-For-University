@@ -12,9 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import TeacherQRGenerator from './components/SmartQRGenerator';
 
 const getBackendBase = () => {
-  if (Platform.OS === 'android') {
-    return 'http://10.0.2.2:5000';
-  }
+  // Use localhost for both emulator and physical devices with adb reverse tunnels
   return 'http://localhost:5000';
 };
 

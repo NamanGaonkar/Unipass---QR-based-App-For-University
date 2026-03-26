@@ -15,6 +15,9 @@ const CAMPUS_WIFI_TAG = process.env.CAMPUS_WIFI_TAG || 'AITD-CAMPUS';
 const dbDir = path.join(__dirname, 'data');
 const dbFile = path.join(dbDir, 'local-db.json');
 
+// In-memory session tracking (resets on server restart)
+const activeSessions = new Map();
+
 const normalize = (value) => String(value || '').trim().toUpperCase();
 
 const ensureDb = () => {
@@ -253,6 +256,20 @@ app.post('/api/teacher/generate-session', (req, res) => {
     epoch: qrPayload.epoch,
   });
 
+  // Register session in active sessions
+  const sessionKey = `${qrPayload.teacherId}|${qrPayload.subjectCode}|${qrPayload.epoch}`;
+  activeSessions.set(sessionKey, {
+    teacherId: qrPayload.teacherId,
+    teacherName: qrPayload.teacherName,
+    subjectCode: qrPayload.subjectCode,
+    subjectName: qrPayload.subjectName,
+    epoch: qrPayload.epoch,
+    issuedAt: qrPayload.issuedAt,
+    expiresAt: qrPayload.expiresAt,
+    markedCount: 0,
+    lastActivity: Date.now(),
+  });
+
   res.json({
     qrPayload,
     qrText: JSON.stringify(qrPayload),
@@ -349,6 +366,14 @@ app.post('/api/student/mark-attendance', (req, res) => {
   db.attendance = [record, ...(db.attendance || [])];
   writeDb(db);
 
+  // Update active session count
+  const sessionKey = `${normalize(qrPayload.teacherId)}|${normalize(qrPayload.subjectCode)}|${Number(qrPayload.epoch)}`;
+  if (activeSessions.has(sessionKey)) {
+    const session = activeSessions.get(sessionKey);
+    session.markedCount += 1;
+    session.lastActivity = Date.now();
+  }
+
   res.json({
     success: true,
     message: 'Attendance marked successfully.',
@@ -359,6 +384,15 @@ app.post('/api/student/mark-attendance', (req, res) => {
 app.get('/api/admin/attendance', (req, res) => {
   const db = readDb();
   res.json({ attendance: db.attendance || [] });
+});
+
+app.get('/api/admin/active-sessions', (req, res) => {
+  const now = Date.now();
+  const sessions = Array.from(activeSessions.values())
+    .filter((session) => session.expiresAt > now)
+    .sort((a, b) => Number(b.lastActivity) - Number(a.lastActivity));
+
+  res.json({ sessions });
 });
 
 app.listen(PORT, () => {

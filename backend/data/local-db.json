@@ -1,6 +1,27 @@
 {
   "subjects": [
     {
+      "id": "SUBJ-ECOMP5570",
+      "code": "ECOMP5570",
+      "name": "ETHICS",
+      "semester": "5",
+      "createdAt": 1774534489086
+    },
+    {
+      "id": "SUBJ-ECOMP560",
+      "code": "ECOMP560",
+      "name": "COMPUTER GRAPHICS",
+      "semester": "5",
+      "createdAt": 1774534040208
+    },
+    {
+      "id": "SUBJ-ECOMP540",
+      "code": "ECOMP540",
+      "name": "Operating System",
+      "semester": "5",
+      "createdAt": 1774531738099
+    },
+    {
       "id": "SUBJ-EC555",
       "code": "ECOMP555",
       "name": "DSP",
@@ -10,6 +31,32 @@
     }
   ],
   "attendance": [
+    {
+      "id": "ATT-1774534592820-16skm6",
+      "studentId": "23EC17",
+      "studentName": "Naman",
+      "teacherId": "ATEC2013",
+      "teacherName": "ATMARAM tukaram",
+      "subjectId": "SUBJ-ECOMP560",
+      "subjectCode": "ECOMP560",
+      "subjectName": "COMPUTER GRAPHICS",
+      "epoch": 29575576,
+      "markedAt": 1774534592818,
+      "proof": "6a95bd14595ab8881e7401e8"
+    },
+    {
+      "id": "ATT-1774534115255-559pu8",
+      "studentId": "23EC17",
+      "studentName": "Naman",
+      "teacherId": "ATEC2013",
+      "teacherName": "ATMARAM tukaram",
+      "subjectId": "SUBJ-ECOMP560",
+      "subjectCode": "ECOMP560",
+      "subjectName": "COMPUTER GRAPHICS",
+      "epoch": 29575568,
+      "markedAt": 1774534115253,
+      "proof": "e073ccc76f5f08d408c6e3b2"
+    },
     {
       "id": "ATT-1774510290934-y18m9w",
       "studentId": "23EC26",
