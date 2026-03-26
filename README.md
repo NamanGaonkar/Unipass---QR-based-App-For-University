@@ -29,21 +29,24 @@ Unipass/
 
 ### Teacher App
 
-![Teacher Login](ASSETS/Teachers%20log%20in.png)
-
-![Teacher Dashboard](ASSETS/Teachers%20Dashboard.png)
-
-![Teacher Dashboard Live Attendance](ASSETS/Teachers%20Dashboard%202.png)
+<p align="center">
+	<img src="ASSETS/Teachers%20log%20in.png" alt="Teacher Login" width="31%" />
+	<img src="ASSETS/Teachers%20Dashboard.png" alt="Teacher Dashboard" width="31%" />
+	<img src="ASSETS/Teachers%20Dashboard%202.png" alt="Teacher Dashboard Live Attendance" width="31%" />
+</p>
 
 ### Student App
 
-![Student App Scan View](ASSETS/Student%20App%20Demo%20.png)
-
-![Student App Manual JSON and Marking](ASSETS/Student%20App%20demo%202.png)
+<p align="center">
+	<img src="ASSETS/Student%20App%20Demo%20.png" alt="Student App Scan View" width="42%" />
+	<img src="ASSETS/Student%20App%20demo%202.png" alt="Student App Manual JSON and Marking" width="42%" />
+</p>
 
 ### Admin Dashboard
 
-![Admin Dashboard](ASSETS/Admin%20DashBoard.png)
+<p align="center">
+	<img src="ASSETS/Admin%20DashBoard.png" alt="Admin Dashboard" width="90%" />
+</p>
 
 ## Quick Start
 
