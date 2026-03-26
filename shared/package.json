@@ -1,0 +1,15 @@
+{
+  "name": "unipass-shared",
+  "version": "1.0.0",
+  "description": "Shared utilities for UniPass authentication system",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["authentication", "fido2", "totp"],
+  "author": "UniPass Team",
+  "license": "MIT",
+  "dependencies": {
+    "otplib": "^12.0.1"
+  }
+}

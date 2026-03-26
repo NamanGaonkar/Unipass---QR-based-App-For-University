@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-success {
+    @apply badge bg-success-50 text-success-600;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-50 text-warning-600;
+  }
+
+  .badge-danger {
+    @apply badge bg-danger-50 text-danger-600;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-50 text-primary-600;
+  }
+}

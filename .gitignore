@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage/
+*.log
+
+# Build outputs
+build/
+dist/
+*.tsbuildinfo
+
+# React Native
+mobile/.expo/
+mobile/.expo-shared/
+mobile/android/app/build/
+mobile/ios/Pods/
+mobile/ios/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Sensitive
+*.pem
+*.key
+private-keys/

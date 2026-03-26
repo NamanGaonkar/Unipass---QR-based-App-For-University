@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "UniPass Student",
+    "slug": "unipass-student-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow UniPass Student to scan teacher QR codes for attendance."
+        }
+      ]
+    ],
+    "android": {
+      "package": "com.unipass.student",
+      "permissions": [
+        "CAMERA"
+      ]
+    }
+  }
+}

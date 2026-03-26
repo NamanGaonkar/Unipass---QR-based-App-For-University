@@ -1,0 +1,45 @@
+{
+  "name": "unipass-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
+    "prebuild": "npx eas build:configure",
+    "build:android": "cd android && gradlew.bat assembleDebug",
+    "build:android:debug": "cd android && gradlew.bat assembleDebug",
+    "build:android:release": "cd android && gradlew.bat assembleRelease",
+    "install:android:debug": "cd android && gradlew.bat installDebug"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.21.0",
+    "@react-native-clipboard/clipboard": "^1.13.2",
+    "@react-native-community/hooks": "^100.1.0",
+    "axios": "^1.6.0",
+    "crypto-js": "^4.2.0",
+    "fast-base64-decode": "^2.0.0",
+    "otplib": "^12.0.1",
+    "react": "^18.2.0",
+    "react-native": "^0.73.0",
+    "react-native-get-random-values": "^1.10.0",
+    "react-native-keychain": "^8.1.2",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-qrcode-svg": "^6.3.0",
+    "react-native-svg": "^14.1.0",
+    "text-encoding": "^0.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.23.0",
+    "@babel/runtime": "^7.23.0",
+    "@react-native/babel-preset": "^0.73.0",
+    "@react-native/eslint-config": "^0.73.0",
+    "@react-native/metro-config": "^0.73.0",
+    "jest": "^29.7.0",
+    "metro-react-native-babel-preset": "^0.77.0"
+  }
+}
